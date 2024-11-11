@@ -1,9 +1,24 @@
-#############################################################################
-# Mastermind game for RARS RISC-V simulator
-#  (https://github.com/TheThirdOne/rars)
-# (c) Emmanuel Lazard
-# Licence CC-BY
-#############################################################################
+# -----------------------------------
+# 2024-11-11 Soobin Rho | Annotation
+# -----------------------------------
+# The operation of MasterMind
+# What makes it go?
+# -----------------------------------
+# In this file, I've replaced all the original comments, and replaced
+# them with my own comments, as instructed.
+#
+# Basically, this code starts with `.eqv` directives that tell the assembler
+# that a certain constant variable is a certain integer -- e.g. `DIGIT_MAX` is 8.
+# The macros are then defined for printing stuff. It's notable that throughout this
+# code, the program makes use of functions a lot whenever it's beneficial to do so.
+# The use of macro here by the author, I believe, suggests there are certain things
+# that are better done by macros than functions, such as printing a string or a newline.
+#
+# The main text part of the code contains the instructions to initialize the data structures
+# required; generate the secret code using the random integer system call; check the user's
+# input for a guess; check how many of the digits are correct and how many of the digits are
+# the right digits but in an incorrect position; and exit the program if the answer is found.
+
 # The purpose of the game is to guess a secret code chosen by the computer.
 # A code is composed of 4 digits, each one being between 0 and 7.
 # Repetitions are allowed (so that 1213 is a valid code for example).
